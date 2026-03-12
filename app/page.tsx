@@ -1,21 +1,25 @@
-import Header from "@/components/layout/header";
-import Hero from "@/components/sections/hero";
-import Philosophy from "@/components/sections/philosophy";
-import Ventures from "@/components/sections/ventures";
-import Team from "@/components/sections/team";
-import Contact from "@/components/sections/contact";
-import Footer from "@/components/layout/footer";
+import { FluidBackground } from "@/components/fluid-background";
+import { Header } from "@/components/header";
+import { HeroSection } from "@/components/sections/hero-section";
+import { PhilosophySection } from "@/components/sections/philosophy-section";
+import { VenturesSection } from "@/components/sections/ventures-section";
+import { TeamSection } from "@/components/sections/team-section";
+import { ContactSection } from "@/components/sections/contact-section";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center w-full max-w-full overflow-hidden text-center mx-auto">
+    <>
+      <FluidBackground />
       <Header />
-      <Hero />
-      <Philosophy />
-      <Ventures />
-      <Team />
-      <Contact />
+      <main>
+        <HeroSection />
+        <PhilosophySection />
+        <VenturesSection />
+        <TeamSection />
+        <ContactSection />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

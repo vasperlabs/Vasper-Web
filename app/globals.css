@@ -1,193 +1,213 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
-@theme {
-  --color-void-black: #00050A;
-  --color-twilight-blue: #012030;
-  --color-cosmic-teal: #13678A;
-  --color-venus-turquoise: #45C4B0;
-  --color-starlight-green: #9AEBA3;
-  --color-supernova-pale: #DAFDBA;
-  --color-ice-blue: #8BA7B8;
+@custom-variant dark (&:is(.dark *));
 
-  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+:root {
+  /* Vasper Labs Dark Corporate Palette */
+  --background: #0A0A0A;
+  --foreground: #EDEDED;
+  --card: #111111;
+  --card-foreground: #EDEDED;
+  --popover: #0F1115;
+  --popover-foreground: #EDEDED;
+  --primary: #EDEDED;
+  --primary-foreground: #0A0A0A;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #EDEDED;
+  --muted: #1A1A1A;
+  --muted-foreground: #888888;
+  --accent: #13678A;
+  --accent-foreground: #EDEDED;
+  --destructive: #ef4444;
+  --destructive-foreground: #EDEDED;
+  --border: #222222;
+  --input: #1A1A1A;
+  --ring: #13678A;
+  
+  /* Vasper Brand Colors */
+  --vasper-teal: #13678A;
+  --vasper-green: #9AEBA3;
+  --vasper-dark: #0A0A0A;
+  --vasper-darker: #0F1115;
+  
+  --chart-1: #13678A;
+  --chart-2: #9AEBA3;
+  --chart-3: #398396;
+  --chart-4: #5FD3BC;
+  --chart-5: #2A5A6F;
+  --radius: 0.5rem;
+  --sidebar: #0F1115;
+  --sidebar-foreground: #EDEDED;
+  --sidebar-primary: #13678A;
+  --sidebar-primary-foreground: #EDEDED;
+  --sidebar-accent: #1A1A1A;
+  --sidebar-accent-foreground: #EDEDED;
+  --sidebar-border: #222222;
+  --sidebar-ring: #13678A;
 }
 
-/* ── Base Reset ───────────────────────────────────────────── */
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.dark {
+  --background: #0A0A0A;
+  --foreground: #EDEDED;
+  --card: #111111;
+  --card-foreground: #EDEDED;
+  --popover: #0F1115;
+  --popover-foreground: #EDEDED;
+  --primary: #EDEDED;
+  --primary-foreground: #0A0A0A;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #EDEDED;
+  --muted: #1A1A1A;
+  --muted-foreground: #888888;
+  --accent: #13678A;
+  --accent-foreground: #EDEDED;
+  --destructive: #ef4444;
+  --destructive-foreground: #EDEDED;
+  --border: #222222;
+  --input: #1A1A1A;
+  --ring: #13678A;
+  --chart-1: #13678A;
+  --chart-2: #9AEBA3;
+  --chart-3: #398396;
+  --chart-4: #5FD3BC;
+  --chart-5: #2A5A6F;
+  --sidebar: #0F1115;
+  --sidebar-foreground: #EDEDED;
+  --sidebar-primary: #13678A;
+  --sidebar-primary-foreground: #EDEDED;
+  --sidebar-accent: #1A1A1A;
+  --sidebar-accent-foreground: #EDEDED;
+  --sidebar-border: #222222;
+  --sidebar-ring: #13678A;
 }
 
-html {
-  scroll-behavior: auto; /* Lenis handles smooth scroll */
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --font-serif: 'Newsreader', 'Times New Roman', serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Vasper Brand */
+  --color-vasper-teal: var(--vasper-teal);
+  --color-vasper-green: var(--vasper-green);
+  --color-vasper-dark: var(--vasper-dark);
+  --color-vasper-darker: var(--vasper-darker);
 }
 
-body {
-  background: var(--color-void-black);
-  color: #ffffff;
-  font-family: var(--font-sans);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-::selection {
-  background: var(--color-venus-turquoise);
-  color: var(--color-void-black);
-}
-
-/* ── Custom Cursor ────────────────────────────────────────── */
-
-@media (pointer: fine) {
+@layer base {
   * {
-    cursor: none !important;
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Smooth scroll with Lenis */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
   }
 }
 
-/* ── Noise Overlay ────────────────────────────────────────── */
-
-.noise-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-}
-
-/* ── Gradient Text ─────────────────────────────────────────── */
-
-.gradient-text {
-  background: linear-gradient(135deg, #13678A, #9AEBA3);
+/* Vasper gradient text */
+.vasper-gradient {
+  background: linear-gradient(135deg, #13678A 0%, #9AEBA3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* ── Glassmorphism ─────────────────────────────────────────── */
-
-.glass {
-  background: rgba(19, 103, 138, 0.07);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(19, 103, 138, 0.15);
+/* Selection styling */
+::selection {
+  background: rgba(19, 103, 138, 0.3);
+  color: #EDEDED;
 }
 
-.glass-strong {
-  background: rgba(19, 103, 138, 0.12);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border: 1px solid rgba(19, 103, 138, 0.2);
+/* -------------------------------------------------------
+   Fluid background blob animations – GPU-accelerated
+   Only transforms/opacity are animated (compositor-only).
+   No layout or paint is triggered.
+-------------------------------------------------------- */
+@keyframes blob-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(40px, -60px) scale(1.06); }
+  66%       { transform: translate(-30px, 30px) scale(0.94); }
 }
 
-/* ── Glow Effects ──────────────────────────────────────────── */
-
-/* Glow effects have been removed per user request */
-
-/* ── Blinking Dot ──────────────────────────────────────────── */
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
+@keyframes blob-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-50px, 35px) scale(1.04); }
+  66%       { transform: translate(25px, -25px) scale(0.97); }
 }
 
-.blink {
-  animation: blink 2s ease-in-out infinite;
+@keyframes blob-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(20px, -45px) scale(1.03); }
 }
 
-/* ── Typing Cursor ─────────────────────────────────────────── */
-
-@keyframes typing-cursor {
-  0%, 100% { border-color: var(--color-venus-turquoise); }
-  50% { border-color: transparent; }
-}
-
-.typing-cursor::after {
-  content: "";
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  background: var(--color-venus-turquoise);
-  margin-left: 2px;
-  animation: typing-cursor 1s step-end infinite;
-  vertical-align: text-bottom;
-}
-
-/* ── Scrollbar ─────────────────────────────────────────────── */
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-void-black);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(19, 103, 138, 0.4);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-venus-turquoise);
-}
-
-/* ── Celestial Border Trace ─────────────────────────────────── */
-
-@keyframes border-beam {
-  0% {
-    background-position: 0% 0%;
+@layer utilities {
+  .animate-blob-1 {
+    animation: blob-1 12s ease-in-out infinite;
+    will-change: transform;
   }
-  100% {
-    background-position: 200% 200%;
+  .animate-blob-2 {
+    animation: blob-2 16s ease-in-out infinite;
+    will-change: transform;
   }
-}
-
-.celestial-border {
-  position: relative;
-  overflow: hidden;
-}
-
-.celestial-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(
-    135deg,
-    transparent 20%,
-    var(--color-venus-turquoise) 40%,
-    var(--color-starlight-green) 60%,
-    transparent 80%
-  );
-  background-size: 200% 200%;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  animation: border-beam 3s linear infinite;
-}
-
-.celestial-border:hover::before {
-  opacity: 1;
-}
-
-/* ── Duotone Hover ──────────────────────────────────────────── */
-
-.duotone-hover {
-  filter: grayscale(100%) contrast(1.1);
-  transition: filter 0.5s ease;
-}
-
-.duotone-hover:hover {
-  filter: grayscale(0%) sepia(60%) saturate(300%) brightness(0.9) hue-rotate(130deg) contrast(1.1);
+  .animate-blob-3 {
+    animation: blob-3 20s ease-in-out infinite;
+    will-change: transform;
+  }
 }
