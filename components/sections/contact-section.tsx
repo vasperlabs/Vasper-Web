@@ -9,6 +9,7 @@ import { z } from "zod";
 import { cn } from "@/lib/utils";
 import { Spinner } from "@/components/ui/spinner";
 import Link from "next/link";
+import { sendInquiry } from "@/app/actions/sendInquiry";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,13 +62,13 @@ export function ContactSection() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const formData = new FormData();
+      formData.append("email", data.email);
+      formData.append("message", data.message);
 
-      if (response.ok) {
+      const result = await sendInquiry(formData);
+
+      if (result.success) {
         setIsSuccess(true);
         reset();
       }
@@ -132,10 +133,10 @@ export function ContactSection() {
                 </svg>
               </div>
               <h3 className="text-xl font-normal text-[#EDEDED] mb-2">
-                Thank you for reaching out.
+                Teşekkürler, mesajınızı aldık.
               </h3>
               <p className="text-base font-light text-[#888888]">
-                {"We'll review your inquiry and respond within 2-3 business days."}
+                En kısa sürede size dönüş yapacağız.
               </p>
             </div>
           ) : (
@@ -240,10 +241,10 @@ export function ContactSection() {
                   {isSubmitting ? (
                     <>
                       <Spinner className="w-4 h-4" />
-                      Sending...
+                      Gönderiliyor...
                     </>
                   ) : (
-                    "Send Inquiry"
+                    "Gönder"
                   )}
                 </button>
               </div>
