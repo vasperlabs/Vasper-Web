@@ -63,7 +63,9 @@ export function ContactSection() {
     setIsSubmitting(true);
     try {
       const formData = new FormData();
+      formData.append("name", data.name);
       formData.append("email", data.email);
+      if (data.company) formData.append("company", data.company);
       formData.append("message", data.message);
 
       const result = await sendInquiry(formData);
