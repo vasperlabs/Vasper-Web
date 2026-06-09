@@ -27,11 +27,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://vasperlabs.com"),
   title: {
-    default: "Vasper Labs | AI & Web3 Research Laboratory",
+    default: "Vasper Labs | Growth Management & Agentic Sistem Entegrasyonu",
     template: "%s | Vasper Labs",
   },
   description:
-    "Vasper Labs is an independent research facility dedicated to building scalable AI architectures and decentralized infrastructure. Pioneering the next generation of intelligent systems.",
+    "Vasper Labs, şirketlerin dijital dönüşüm süreçlerini yöneten, verimliliği artırmak için otonom Agentic Sistemler ve yapay zeka odaklı Growth Management çözümleri sunan yeni nesil bir teknoloji ajansıdır.",
   keywords: [
     "AI research",
     "Web3",
@@ -41,6 +41,10 @@ export const metadata: Metadata = {
     "research laboratory",
     "deep learning",
     "blockchain",
+    "AEO",
+    "GEO",
+    "AI Agents",
+    "Tech Consulting",
   ],
   authors: [{ name: "Vasper Labs" }],
   creator: "Vasper Labs",
@@ -58,18 +62,18 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_GB",
+    locale: "tr_TR",
     url: "https://vasperlabs.com",
     siteName: "Vasper Labs",
-    title: "Vasper Labs | AI & Web3 Research Laboratory",
+    title: "Vasper Labs | Growth Management & Agentic Sistem Entegrasyonu",
     description:
-      "Pioneering the next generation of intelligent systems. Independent research facility dedicated to scalable AI architectures and decentralized infrastructure.",
+      "Vasper Labs, şirketlerin dijital dönüşüm süreçlerini yöneten, verimliliği artırmak için otonom Agentic Sistemler ve yapay zeka odaklı Growth Management çözümleri sunan yeni nesil bir teknoloji ajansıdır.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vasper Labs | AI & Web3 Research Laboratory",
+    title: "Vasper Labs | Growth Management & Agentic Sistem Entegrasyonu",
     description:
-      "Pioneering the next generation of intelligent systems. Independent research facility for AI and Web3.",
+      "Vasper Labs, şirketlerin dijital dönüşüm süreçlerini yöneten, verimliliği artırmak için otonom Agentic Sistemler ve yapay zeka odaklı Growth Management çözümleri sunan yeni nesil bir teknoloji ajansıdır.",
     creator: "@vasperlabs",
   },
   icons: {
@@ -104,7 +108,7 @@ const jsonLd = {
         height: 512,
       },
       description:
-        "Independent research facility dedicated to building scalable AI architectures and decentralized infrastructure.",
+        "Vasper Labs, şirketlerin dijital dönüşüm süreçlerini yöneten, verimliliği artırmak için otonom Agentic Sistemler ve yapay zeka odaklı Growth Management çözümleri sunan yeni nesil bir teknoloji ajansıdır.",
       foundingDate: "2024",
       sameAs: [
         "https://twitter.com/vasperlabs",
@@ -117,6 +121,41 @@ const jsonLd = {
         telephone: "+1 (917) 695-5756",
         contactType: "General Inquiry",
       },
+      knowsAbout: ["AEO", "GEO", "AI Agents", "Tech Consulting"],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Hizmetlerimiz",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Agentic Sistemler"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Büyüme Yönetimi (Growth Management)"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Dijital Dönüşüm Danışmanlığı"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Yapay Zeka Otomasyonları"
+            }
+          }
+        ]
+      }
     },
     {
       "@type": "LocalBusiness",
