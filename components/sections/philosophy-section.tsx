@@ -8,19 +8,19 @@ gsap.registerPlugin(ScrollTrigger);
 
 const philosophyPoints = [
   {
-    title: "Foundation Models",
+    title: "Agentic Systems Integration",
     description:
-      "Developing next-generation language and multimodal models with enhanced reasoning capabilities and improved alignment with human values.",
+      "Seamlessly integrating 24/7 autonomous AI agents that manage customer relations, conduct advanced data analysis, and optimize operational workflows.",
   },
   {
-    title: "Decentralized Systems",
+    title: "Growth Management",
     description:
-      "Building resilient infrastructure for distributed computing and secure, trustless protocols that power the future of digital ownership.",
+      "Driving measurable revenue growth through advanced data analytics and AI-driven conversion rate optimization.",
   },
   {
-    title: "Applied Intelligence",
+    title: "Digital Transformation",
     description:
-      "Translating fundamental research into practical applications that solve real-world challenges across industries and domains.",
+      "Future-proofing traditional business models by implementing modern web technologies and scalable artificial intelligence architectures.",
   },
 ];
 

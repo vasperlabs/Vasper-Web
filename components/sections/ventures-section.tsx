@@ -9,32 +9,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ventures = [
   {
-    name: "Nexus Protocol",
-    category: "Infrastructure",
+    name: "Autonomous Customer Support Agent",
+    category: "AI Solutions",
     description:
-      "A modular framework for building secure, interoperable decentralized applications with native AI integration.",
-    status: "Active Development",
+      "An intelligent, 24/7 conversational agent capable of handling complex customer inquiries and driving automated resolutions.",
+    status: "Active Deployment",
   },
   {
-    name: "Synthesis Engine",
-    category: "AI Research",
+    name: "AI-Driven Market Analytics Platform",
+    category: "Data & Growth",
     description:
-      "Our flagship large language model optimized for complex reasoning, code generation, and multi-step problem solving.",
-    status: "Research Phase",
+      "A comprehensive analytics platform that utilizes advanced machine learning to uncover market trends and optimize growth strategies.",
+    status: "Available",
   },
   {
-    name: "Vector Atlas",
-    category: "Data Infrastructure",
+    name: "Conversion Rate Optimization Engine",
+    category: "E-Commerce",
     description:
-      "High-performance vector database designed for trillion-scale embeddings with sub-millisecond query latency.",
-    status: "Private Beta",
+      "A data-driven optimization tool that autonomously tests and implements UX improvements to maximize conversion rates.",
+    status: "Active Deployment",
   },
   {
-    name: "Quantum Bridge",
-    category: "Cryptography",
+    name: "Enterprise Workflow Automation",
+    category: "Operations",
     description:
-      "Post-quantum cryptographic protocols ensuring long-term security for blockchain and distributed systems.",
-    status: "Research Phase",
+      "Custom AI agents that seamlessly integrate into existing tech stacks to eliminate manual tasks and boost operational efficiency.",
+    status: "Available",
   },
 ];
 
