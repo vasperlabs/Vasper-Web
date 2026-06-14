@@ -90,7 +90,7 @@ export function Header() {
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
                 onBlur={() => setTimeout(() => setLangMenuOpen(false), 200)}
-                className="inline-flex items-center gap-1.5 px-2 py-2 text-sm font-light text-[#888888] transition-colors duration-300 hover:text-[#EDEDED]"
+                className="inline-flex items-center gap-1.5 px-2 py-2 text-sm font-light text-[#888888] transition-colors duration-300 hover:text-[#EDEDED] cursor-pointer"
               >
                 <Globe className="w-4 h-4" />
                 <span className="uppercase">{locale}</span>
@@ -113,7 +113,7 @@ export function Header() {
                       key={l.code}
                       onClick={() => switchLocale(l.code)}
                       className={cn(
-                        "w-full text-left px-4 py-2 text-sm font-light transition-colors hover:bg-[#111111]",
+                        "w-full text-left px-4 py-2 text-sm font-light transition-colors hover:bg-[#111111] cursor-pointer",
                         locale === l.code ? "text-[#EDEDED] bg-[#111111]/50" : "text-[#888888]"
                       )}
                     >
