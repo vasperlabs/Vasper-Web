@@ -4,44 +4,43 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const ventures = [
-  {
-    name: "Autonomous Customer Support Agent",
-    category: "AI Solutions",
-    description:
-      "An intelligent, 24/7 conversational agent capable of handling complex customer inquiries and driving automated resolutions.",
-    status: "Active Deployment",
-  },
-  {
-    name: "AI-Driven Market Analytics Platform",
-    category: "Data & Growth",
-    description:
-      "A comprehensive analytics platform that utilizes advanced machine learning to uncover market trends and optimize growth strategies.",
-    status: "Available",
-  },
-  {
-    name: "Conversion Rate Optimization Engine",
-    category: "E-Commerce",
-    description:
-      "A data-driven optimization tool that autonomously tests and implements UX improvements to maximize conversion rates.",
-    status: "Active Deployment",
-  },
-  {
-    name: "Enterprise Workflow Automation",
-    category: "Operations",
-    description:
-      "Custom AI agents that seamlessly integrate into existing tech stacks to eliminate manual tasks and boost operational efficiency.",
-    status: "Available",
-  },
-];
 
 export function VenturesSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+
+  const t = useTranslations("Ventures");
+
+  const ventures = [
+    {
+      name: t("card1Name"),
+      category: t("card1Cat"),
+      description: t("card1Desc"),
+      status: t("card1Status"),
+    },
+    {
+      name: t("card2Name"),
+      category: t("card2Cat"),
+      description: t("card2Desc"),
+      status: t("card2Status"),
+    },
+    {
+      name: t("card3Name"),
+      category: t("card3Cat"),
+      description: t("card3Desc"),
+      status: t("card3Status"),
+    },
+    {
+      name: t("card4Name"),
+      category: t("card4Cat"),
+      description: t("card4Desc"),
+      status: t("card4Status"),
+    },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -94,14 +93,13 @@ export function VenturesSection() {
       <div className="mx-auto max-w-7xl">
         <div ref={headingRef} className="max-w-3xl mb-20 lg:mb-28 opacity-0">
           <span className="text-sm font-light text-[#555555] tracking-wider uppercase mb-4 block">
-            Ventures
+            {t("label")}
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.15] tracking-tight text-[#EDEDED] text-balance">
-            Building at the frontier of technology.
+            {t("heading")}
           </h2>
           <p className="mt-6 text-lg font-light leading-relaxed text-[#888888] max-w-xl">
-            Our portfolio spans foundational research, infrastructure
-            development, and applied solutions.
+            {t("description")}
           </p>
         </div>
 

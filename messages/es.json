@@ -1,0 +1,85 @@
+{
+  "Header": {
+    "research": "Investigación",
+    "ventures": "Empresas",
+    "company": "Empresa",
+    "contact": "Contacto"
+  },
+  "Brand": {
+    "name": "Vasper Labs",
+    "agenticAI": "Agentic AI",
+    "growthManagement": "Growth Management"
+  },
+  "Hero": {
+    "title": "Escale su Empresa con Agentic AI & Growth Management",
+    "subtext": "Vasper Labs es un socio tecnológico de próxima generación que automatiza la transformación digital y proporciona estrategias basadas en datos para el crecimiento empresarial sostenible.",
+    "cta": "Reservar una Llamada Estratégica"
+  },
+  "Philosophy": {
+    "heading": "Simplificamos lo complejo.",
+    "description": "Nuestra investigación abarca los límites de la inteligencia artificial y los sistemas distribuidos, unidos por el compromiso con una metodología rigurosa y un impacto significativo.",
+    "card1Title": "Integración de Agentic Systems",
+    "card1Desc": "Integración perfecta de agentes de IA autónomos 24/7 que gestionan las relaciones con los clientes, realizan análisis de datos avanzados y optimizan los flujos de trabajo operativos.",
+    "card2Title": "Growth Management",
+    "card2Desc": "Impulsamos el crecimiento medible de los ingresos a través de análisis de datos avanzados y la optimización de la tasa de conversión (CRO) impulsada por IA.",
+    "card3Title": "Transformación Digital",
+    "card3Desc": "Preparamos los modelos de negocio tradicionales para el futuro implementando tecnologías web modernas y arquitecturas de inteligencia artificial escalables."
+  },
+  "Ventures": {
+    "label": "Empresas",
+    "heading": "Construyendo en la frontera de la tecnología.",
+    "description": "Nuestra cartera abarca investigación fundamental, desarrollo de infraestructura y soluciones aplicadas.",
+    "card1Name": "Agente Autónomo de Soporte al Cliente",
+    "card1Cat": "Soluciones de IA",
+    "card1Desc": "Un agente conversacional inteligente 24/7 capaz de gestionar consultas complejas de los clientes e impulsar resoluciones automatizadas.",
+    "card1Status": "Despliegue Activo",
+    "card2Name": "Plataforma de Análisis de Mercado",
+    "card2Cat": "Datos y Crecimiento",
+    "card2Desc": "Una plataforma de análisis integral que utiliza aprendizaje automático avanzado para descubrir tendencias del mercado y optimizar estrategias de crecimiento.",
+    "card2Status": "Disponible",
+    "card3Name": "Motor de Optimización de Tasa de Conversión",
+    "card3Cat": "Comercio Electrónico",
+    "card3Desc": "Una herramienta de optimización basada en datos que prueba e implementa autónomamente mejoras de UX para maximizar las tasas de conversión.",
+    "card3Status": "Despliegue Activo",
+    "card4Name": "Automatización del Flujo de Trabajo",
+    "card4Cat": "Operaciones",
+    "card4Desc": "Agentic Systems personalizados que se integran perfectamente en las infraestructuras tecnológicas existentes para eliminar tareas manuales y aumentar la eficiencia.",
+    "card4Status": "Disponible"
+  },
+  "Contact": {
+    "label": "Contacto",
+    "heading": "Hablemos de su próximo proyecto.",
+    "description": "Ya sea que esté interesado en colaborar en investigación, oportunidades de inversión o unirse a nuestro equipo.",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Su nombre",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "su@email.com",
+    "companyLabel": "Empresa",
+    "companyOptional": "(opcional)",
+    "companyPlaceholder": "Su empresa",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Cuéntenos sobre su consulta...",
+    "submitBtn": "Enviar",
+    "sendingBtn": "Enviando...",
+    "successTitle": "Gracias, hemos recibido su mensaje.",
+    "successDesc": "Nos pondremos en contacto con usted lo antes posible."
+  },
+  "Footer": {
+    "description": "Un centro de investigación independiente pionero en la próxima generación de sistemas inteligentes e infraestructura descentralizada.",
+    "location": "Londres, Reino Unido",
+    "catResearch": "Investigación",
+    "catCompany": "Empresa",
+    "catLegal": "Legal",
+    "catSocial": "Social",
+    "navFoundationModels": "Modelos Fundacionales",
+    "navInfrastructure": "Infraestructura",
+    "navPublications": "Publicaciones",
+    "navAbout": "Acerca de",
+    "navCareers": "Carreras",
+    "navPress": "Prensa",
+    "navPrivacy": "Privacidad",
+    "navTerms": "Términos",
+    "copyright": "© {year} Vasper Labs Ltd. Todos los derechos reservados.",
+    "registered": "Registrado en Inglaterra y Gales"
+  }
+}

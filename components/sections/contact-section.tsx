@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { Spinner } from "@/components/ui/spinner";
 import Link from "next/link";
 import { sendInquiry } from "@/app/actions/sendInquiry";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +28,8 @@ export function ContactSection() {
   const contentRef = useRef<HTMLDivElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  const t = useTranslations("Contact");
 
   const {
     register,
@@ -91,14 +94,13 @@ export function ContactSection() {
         <div ref={contentRef} className="opacity-0">
           <div className="text-center mb-16">
             <span className="text-sm font-light text-[#555555] tracking-wider uppercase mb-4 block">
-              Contact
+              {t("label")}
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.15] tracking-tight text-[#EDEDED] text-balance">
-              {"Let's discuss your next project."}
+              {t("heading")}
             </h2>
             <p className="mt-6 text-lg font-light leading-relaxed text-[#888888] max-w-xl mx-auto">
-              Whether you're interested in research collaboration, investment
-              opportunities, or joining our team.
+              {t("description")}
             </p>
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm font-light text-[#666666]">
               <Link
@@ -135,10 +137,10 @@ export function ContactSection() {
                 </svg>
               </div>
               <h3 className="text-xl font-normal text-[#EDEDED] mb-2">
-                Teşekkürler, mesajınızı aldık.
+                {t("successTitle")}
               </h3>
               <p className="text-base font-light text-[#888888]">
-                En kısa sürede size dönüş yapacağız.
+                {t("successDesc")}
               </p>
             </div>
           ) : (
@@ -149,7 +151,7 @@ export function ContactSection() {
                     htmlFor="name"
                     className="block text-sm font-light text-[#888888] mb-3"
                   >
-                    Name
+                    {t("nameLabel")}
                   </label>
                   <input
                     {...register("name")}
@@ -159,7 +161,7 @@ export function ContactSection() {
                       "w-full bg-transparent border-0 border-b border-[#333333] py-3 text-[#EDEDED] placeholder-[#555555] focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light",
                       errors.name && "border-red-500/50"
                     )}
-                    placeholder="Your name"
+                    placeholder={t("namePlaceholder")}
                   />
                   {errors.name && (
                     <p className="mt-2 text-xs text-red-400/80">
@@ -173,7 +175,7 @@ export function ContactSection() {
                     htmlFor="email"
                     className="block text-sm font-light text-[#888888] mb-3"
                   >
-                    Email
+                    {t("emailLabel")}
                   </label>
                   <input
                     {...register("email")}
@@ -183,7 +185,7 @@ export function ContactSection() {
                       "w-full bg-transparent border-0 border-b border-[#333333] py-3 text-[#EDEDED] placeholder-[#555555] focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light",
                       errors.email && "border-red-500/50"
                     )}
-                    placeholder="your@email.com"
+                    placeholder={t("emailPlaceholder")}
                   />
                   {errors.email && (
                     <p className="mt-2 text-xs text-red-400/80">
@@ -198,15 +200,15 @@ export function ContactSection() {
                   htmlFor="company"
                   className="block text-sm font-light text-[#888888] mb-3"
                 >
-                  Company{" "}
-                  <span className="text-[#555555]">(optional)</span>
+                  {t("companyLabel")}{" "}
+                  <span className="text-[#555555]">{t("companyOptional")}</span>
                 </label>
                 <input
                   {...register("company")}
                   type="text"
                   id="company"
                   className="w-full bg-transparent border-0 border-b border-[#333333] py-3 text-[#EDEDED] placeholder-[#555555] focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light"
-                  placeholder="Your company"
+                  placeholder={t("companyPlaceholder")}
                 />
               </div>
 
@@ -215,7 +217,7 @@ export function ContactSection() {
                   htmlFor="message"
                   className="block text-sm font-light text-[#888888] mb-3"
                 >
-                  Message
+                  {t("messageLabel")}
                 </label>
                 <textarea
                   {...register("message")}
@@ -225,7 +227,7 @@ export function ContactSection() {
                     "w-full bg-transparent border-0 border-b border-[#333333] py-3 text-[#EDEDED] placeholder-[#555555] focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light resize-none",
                     errors.message && "border-red-500/50"
                   )}
-                  placeholder="Tell us about your inquiry..."
+                  placeholder={t("messagePlaceholder")}
                 />
                 {errors.message && (
                   <p className="mt-2 text-xs text-red-400/80">
@@ -243,10 +245,10 @@ export function ContactSection() {
                   {isSubmitting ? (
                     <>
                       <Spinner className="w-4 h-4" />
-                      Gönderiliyor...
+                      {t("sendingBtn")}
                     </>
                   ) : (
-                    "Gönder"
+                    t("submitBtn")
                   )}
                 </button>
               </div>

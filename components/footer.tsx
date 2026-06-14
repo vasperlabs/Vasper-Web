@@ -1,28 +1,31 @@
 import Link from "next/link";
-
-const navigation = {
-  research: [
-    { name: "Foundation Models", href: "#" },
-    { name: "Infrastructure", href: "#" },
-    { name: "Publications", href: "#" },
-  ],
-  company: [
-    { name: "About", href: "#company" },
-    { name: "Careers", href: "#" },
-    { name: "Press", href: "#" },
-  ],
-  legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-  ],
-  social: [
-    { name: "Twitter", href: "https://twitter.com/vasperlabs" },
-    { name: "GitHub", href: "https://github.com/vasperlabs" },
-    { name: "LinkedIn", href: "https://linkedin.com/company/vasperlabs" },
-  ],
-};
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations("Footer");
+
+  const navigation = {
+    research: [
+      { name: t("navFoundationModels"), href: "#" },
+      { name: t("navInfrastructure"), href: "#" },
+      { name: t("navPublications"), href: "#" },
+    ],
+    company: [
+      { name: t("navAbout"), href: "#company" },
+      { name: t("navCareers"), href: "#" },
+      { name: t("navPress"), href: "#" },
+    ],
+    legal: [
+      { name: t("navPrivacy"), href: "#" },
+      { name: t("navTerms"), href: "#" },
+    ],
+    social: [
+      { name: "Twitter", href: "https://twitter.com/vasperlabs" },
+      { name: "GitHub", href: "https://github.com/vasperlabs" },
+      { name: "LinkedIn", href: "https://linkedin.com/company/vasperlabs" },
+    ],
+  };
+
   return (
     <footer className="relative py-20 lg:py-28 px-6 lg:px-8 border-t border-[#1A1A1A]">
       <div className="mx-auto max-w-7xl">
@@ -38,11 +41,10 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-6 text-sm font-light leading-relaxed text-[#666666] max-w-sm">
-              An independent research facility pioneering the next generation of
-              intelligent systems and decentralized infrastructure.
+              {t("description")}
             </p>
             <p className="mt-6 text-sm font-light text-[#555555]">
-              London, United Kingdom
+              {t("location")}
             </p>
             <div className="mt-4 space-y-1 text-sm font-light text-[#666666]">
               <p>
@@ -68,7 +70,7 @@ export function Footer() {
           <div className="lg:col-span-8 grid gap-8 sm:grid-cols-4">
             <div>
               <h3 className="text-sm font-normal text-[#888888] mb-4">
-                Research
+                {t("catResearch")}
               </h3>
               <ul className="space-y-3">
                 {navigation.research.map((item) => (
@@ -86,7 +88,7 @@ export function Footer() {
 
             <div>
               <h3 className="text-sm font-normal text-[#888888] mb-4">
-                Company
+                {t("catCompany")}
               </h3>
               <ul className="space-y-3">
                 {navigation.company.map((item) => (
@@ -103,7 +105,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="text-sm font-normal text-[#888888] mb-4">Legal</h3>
+              <h3 className="text-sm font-normal text-[#888888] mb-4">{t("catLegal")}</h3>
               <ul className="space-y-3">
                 {navigation.legal.map((item) => (
                   <li key={item.name}>
@@ -120,7 +122,7 @@ export function Footer() {
 
             <div>
               <h3 className="text-sm font-normal text-[#888888] mb-4">
-                Social
+                {t("catSocial")}
               </h3>
               <ul className="space-y-3">
                 {navigation.social.map((item) => (
@@ -143,10 +145,10 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-[#1A1A1A] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs font-light text-[#444444]">
-            © {new Date().getFullYear()} Vasper Labs Ltd. All rights reserved.
+            {t("copyright", { year: new Date().getFullYear() })}
           </p>
           <p className="text-xs font-light text-[#444444]">
-            Registered in England and Wales
+            {t("registered")}
           </p>
         </div>
       </div>

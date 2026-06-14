@@ -2,8 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
-import "./globals.css";
-
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import "../globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -200,13 +201,18 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  const messages = await getMessages();
+
   return (
-    <html lang="en" className="dark">
+    <html lang={locale} className="dark">
       <head>
         <script
           type="application/ld+json"
@@ -216,8 +222,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${newsreader.variable} font-sans antialiased`}
       >
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
-        <Analytics />
+        <NextIntlClientProvider messages={messages}>
+          <SmoothScrollProvider>{children}</SmoothScrollProvider>
+          <Analytics />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

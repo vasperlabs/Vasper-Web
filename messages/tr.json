@@ -1,0 +1,85 @@
+{
+  "Header": {
+    "research": "Araştırma",
+    "ventures": "Girişimler",
+    "company": "Şirket",
+    "contact": "İletişim"
+  },
+  "Brand": {
+    "name": "Vasper Labs",
+    "agenticAI": "Agentic AI",
+    "growthManagement": "Growth Management"
+  },
+  "Hero": {
+    "title": "İşletmenizi Agentic AI ve Growth Management ile Büyütün",
+    "subtext": "Vasper Labs, dijital dönüşümü otomatize eden ve sürdürülebilir büyüme için veri odaklı stratejiler sunan yeni nesil bir teknoloji ortağıdır.",
+    "cta": "Strateji Görüşmesi Planla"
+  },
+  "Philosophy": {
+    "heading": "Karmaşık olanı basitleştiriyoruz.",
+    "description": "Araştırmalarımız, yapay zeka ve dağıtık sistemlerin sınırlarını zorlarken, titiz bir metodoloji ve anlamlı etkiler yaratma taahhüdüyle şekillenir.",
+    "card1Title": "Agentic Systems Entegrasyonu",
+    "card1Desc": "Müşteri ilişkilerini yöneten, gelişmiş veri analizi yapan ve operasyonel iş akışlarını optimize eden 7/24 otonom yapay zeka ajanlarının entegrasyonu.",
+    "card2Title": "Growth Management",
+    "card2Desc": "Gelişmiş veri analitiği ve yapay zeka odaklı dönüşüm oranı optimizasyonu (CRO) ile ölçülebilir gelir artışı sağlıyoruz.",
+    "card3Title": "Dijital Dönüşüm",
+    "card3Desc": "Modern web teknolojileri ve ölçeklenebilir yapay zeka mimarileri uygulayarak geleneksel iş modellerini geleceğe hazırlıyoruz."
+  },
+  "Ventures": {
+    "label": "Girişimler",
+    "heading": "Teknolojinin sınırlarında inşa ediyoruz.",
+    "description": "Portföyümüz temel araştırmaları, altyapı geliştirmeyi ve uygulamalı çözümleri kapsamaktadır.",
+    "card1Name": "Otonom Müşteri Destek Ajanı",
+    "card1Cat": "Yapay Zeka Çözümleri",
+    "card1Desc": "Karmaşık müşteri taleplerini yönetebilen ve otomatik çözümler üretebilen akıllı, 7/24 diyaloga dayalı destek ajanı.",
+    "card1Status": "Aktif Kullanımda",
+    "card2Name": "Yapay Zeka Odaklı Pazar Analizi Platformu",
+    "card2Cat": "Veri ve Büyüme",
+    "card2Desc": "Pazar trendlerini keşfetmek ve büyüme stratejilerini optimize etmek için gelişmiş makine öğrenimi kullanan kapsamlı analitik platformu.",
+    "card2Status": "Mevcut",
+    "card3Name": "Dönüşüm Oranı Optimizasyon Motoru",
+    "card3Cat": "E-Ticaret",
+    "card3Desc": "Dönüşüm oranlarını en üst düzeye çıkarmak için kullanıcı deneyimi (UX) iyileştirmelerini otonom olarak test eden veri odaklı araç.",
+    "card3Status": "Aktif Kullanımda",
+    "card4Name": "Kurumsal İş Akışı Otomasyonu",
+    "card4Cat": "Operasyonlar",
+    "card4Desc": "Manuel görevleri ortadan kaldırmak ve operasyonel verimliliği artırmak için mevcut altyapılara sorunsuz entegre olan özel Agentic sistemler.",
+    "card4Status": "Mevcut"
+  },
+  "Contact": {
+    "label": "İletişim",
+    "heading": "Bir sonraki projenizi konuşalım.",
+    "description": "Araştırma işbirlikleri, yatırım fırsatları veya ekibimize katılmakla ilgileniyorsanız bizimle iletişime geçin.",
+    "nameLabel": "İsim",
+    "namePlaceholder": "Adınız",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "email@adresiniz.com",
+    "companyLabel": "Şirket",
+    "companyOptional": "(opsiyonel)",
+    "companyPlaceholder": "Şirketinizin adı",
+    "messageLabel": "Mesajınız",
+    "messagePlaceholder": "Bize talebinizden bahsedin...",
+    "submitBtn": "Gönder",
+    "sendingBtn": "Gönderiliyor...",
+    "successTitle": "Teşekkürler, mesajınızı aldık.",
+    "successDesc": "En kısa sürede size dönüş yapacağız."
+  },
+  "Footer": {
+    "description": "Akıllı sistemlerin ve merkeziyetsiz altyapıların yeni nesline öncülük eden bağımsız bir araştırma merkezi.",
+    "location": "Londra, Birleşik Krallık",
+    "catResearch": "Araştırma",
+    "catCompany": "Şirket",
+    "catLegal": "Yasal",
+    "catSocial": "Sosyal Medya",
+    "navFoundationModels": "Temel Modeller",
+    "navInfrastructure": "Altyapı",
+    "navPublications": "Yayınlar",
+    "navAbout": "Hakkımızda",
+    "navCareers": "Kariyer",
+    "navPress": "Basın",
+    "navPrivacy": "Gizlilik Politikası",
+    "navTerms": "Kullanım Koşulları",
+    "copyright": "© {year} Vasper Labs Ltd. Tüm hakları saklıdır.",
+    "registered": "İngiltere ve Galler'de Tescillidir"
+  }
+}

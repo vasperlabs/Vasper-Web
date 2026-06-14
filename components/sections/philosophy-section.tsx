@@ -3,31 +3,22 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const philosophyPoints = [
-  {
-    title: "Agentic Systems Integration",
-    description:
-      "Seamlessly integrating 24/7 autonomous AI agents that manage customer relations, conduct advanced data analysis, and optimize operational workflows.",
-  },
-  {
-    title: "Growth Management",
-    description:
-      "Driving measurable revenue growth through advanced data analytics and AI-driven conversion rate optimization.",
-  },
-  {
-    title: "Digital Transformation",
-    description:
-      "Future-proofing traditional business models by implementing modern web technologies and scalable artificial intelligence architectures.",
-  },
-];
 
 export function PhilosophySection() {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const t = useTranslations("Philosophy");
+
+  const philosophyPoints = [
+    { title: t("card1Title"), description: t("card1Desc") },
+    { title: t("card2Title"), description: t("card2Desc") },
+    { title: t("card3Title"), description: t("card3Desc") },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -84,12 +75,10 @@ export function PhilosophySection() {
       <div className="mx-auto max-w-7xl">
         <div ref={headingRef} className="max-w-3xl opacity-0">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.15] tracking-tight text-[#EDEDED] text-balance">
-            We simplify the complex.
+            {t("heading")}
           </h2>
           <p className="mt-8 text-lg sm:text-xl font-light leading-relaxed text-[#888888] max-w-2xl text-pretty">
-            Our research spans the boundaries of artificial intelligence and
-            distributed systems, united by a commitment to rigorous methodology
-            and meaningful impact.
+            {t("description")}
           </p>
         </div>
 

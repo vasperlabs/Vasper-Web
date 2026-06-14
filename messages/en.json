@@ -1,0 +1,85 @@
+{
+  "Header": {
+    "research": "Research",
+    "ventures": "Ventures",
+    "company": "Company",
+    "contact": "Contact"
+  },
+  "Brand": {
+    "name": "Vasper Labs",
+    "agenticAI": "Agentic AI",
+    "growthManagement": "Growth Management"
+  },
+  "Hero": {
+    "title": "Scale Your Business with Agentic AI & Growth Management",
+    "subtext": "Vasper Labs is a next-generation technology partner that automates digital transformation and provides data-driven strategies for sustainable business growth.",
+    "cta": "Book a Strategy Call"
+  },
+  "Philosophy": {
+    "heading": "We simplify the complex.",
+    "description": "Our research spans the boundaries of artificial intelligence and distributed systems, united by a commitment to rigorous methodology and meaningful impact.",
+    "card1Title": "Agentic Systems Integration",
+    "card1Desc": "Seamlessly integrating 24/7 autonomous AI agents that manage customer relations, conduct advanced data analysis, and optimize operational workflows.",
+    "card2Title": "Growth Management",
+    "card2Desc": "Driving measurable revenue growth through advanced data analytics and AI-driven conversion rate optimization.",
+    "card3Title": "Digital Transformation",
+    "card3Desc": "Future-proofing traditional business models by implementing modern web technologies and scalable artificial intelligence architectures."
+  },
+  "Ventures": {
+    "label": "Ventures",
+    "heading": "Building at the frontier of technology.",
+    "description": "Our portfolio spans foundational research, infrastructure development, and applied solutions.",
+    "card1Name": "Autonomous Customer Support Agent",
+    "card1Cat": "AI Solutions",
+    "card1Desc": "An intelligent, 24/7 conversational agent capable of handling complex customer inquiries and driving automated resolutions.",
+    "card1Status": "Active Deployment",
+    "card2Name": "AI-Driven Market Analytics Platform",
+    "card2Cat": "Data & Growth",
+    "card2Desc": "A comprehensive analytics platform that utilizes advanced machine learning to uncover market trends and optimize growth strategies.",
+    "card2Status": "Available",
+    "card3Name": "Conversion Rate Optimization Engine",
+    "card3Cat": "E-Commerce",
+    "card3Desc": "A data-driven optimization tool that autonomously tests and implements UX improvements to maximize conversion rates.",
+    "card3Status": "Active Deployment",
+    "card4Name": "Enterprise Workflow Automation",
+    "card4Cat": "Operations",
+    "card4Desc": "Custom AI agents that seamlessly integrate into existing tech stacks to eliminate manual tasks and boost operational efficiency.",
+    "card4Status": "Available"
+  },
+  "Contact": {
+    "label": "Contact",
+    "heading": "Let's discuss your next project.",
+    "description": "Whether you're interested in research collaboration, investment opportunities, or joining our team.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "companyLabel": "Company",
+    "companyOptional": "(optional)",
+    "companyPlaceholder": "Your company",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us about your inquiry...",
+    "submitBtn": "Submit",
+    "sendingBtn": "Sending...",
+    "successTitle": "Thank you, we received your message.",
+    "successDesc": "We will get back to you as soon as possible."
+  },
+  "Footer": {
+    "description": "An independent research facility pioneering the next generation of intelligent systems and decentralized infrastructure.",
+    "location": "London, United Kingdom",
+    "catResearch": "Research",
+    "catCompany": "Company",
+    "catLegal": "Legal",
+    "catSocial": "Social",
+    "navFoundationModels": "Foundation Models",
+    "navInfrastructure": "Infrastructure",
+    "navPublications": "Publications",
+    "navAbout": "About",
+    "navCareers": "Careers",
+    "navPress": "Press",
+    "navPrivacy": "Privacy",
+    "navTerms": "Terms",
+    "copyright": "© {year} Vasper Labs Ltd. All rights reserved.",
+    "registered": "Registered in England and Wales"
+  }
+}
