@@ -201,6 +201,8 @@ const jsonLd = {
   ],
 };
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 export default async function RootLayout({
   children,
   params,
@@ -212,7 +214,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="dark">
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -222,10 +224,17 @@ export default async function RootLayout({
       <body
         className={`${inter.variable} ${newsreader.variable} font-sans antialiased`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <SmoothScrollProvider>{children}</SmoothScrollProvider>
-          <Analytics />
-        </NextIntlClientProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider messages={messages}>
+            <SmoothScrollProvider>{children}</SmoothScrollProvider>
+            <Analytics />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

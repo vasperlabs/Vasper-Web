@@ -27,7 +27,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative py-20 lg:py-28 px-6 lg:px-8 border-t border-[#1A1A1A]">
+    <footer className="relative py-20 lg:py-28 px-6 lg:px-8 border-t border-slate-200 dark:border-[#1A1A1A] bg-white dark:bg-transparent">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-12">
           {/* Brand */}
@@ -40,17 +40,17 @@ export function Footer() {
                 labs
               </span>
             </Link>
-            <p className="mt-6 text-sm font-light leading-relaxed text-[#666666] max-w-sm">
+            <p className="mt-6 text-sm font-light leading-relaxed text-slate-600 dark:text-[#666666] max-w-sm">
               {t("description")}
             </p>
-            <p className="mt-6 text-sm font-light text-[#555555]">
+            <p className="mt-6 text-sm font-light text-slate-500 dark:text-[#555555]">
               {t("location")}
             </p>
-            <div className="mt-4 space-y-1 text-sm font-light text-[#666666]">
+            <div className="mt-4 space-y-1 text-sm font-light text-slate-600 dark:text-[#666666]">
               <p>
                 <Link
                   href="tel:+19176955756"
-                  className="transition-colors duration-300 hover:text-[#9AEBA3]"
+                  className="transition-colors duration-300 hover:text-vasper-teal dark:hover:text-[#9AEBA3]"
                 >
                   +1 (917) 695-5756
                 </Link>
@@ -58,7 +58,7 @@ export function Footer() {
               <p>
                 <Link
                   href="mailto:hello@vasperlabs.com"
-                  className="transition-colors duration-300 hover:text-[#9AEBA3]"
+                  className="transition-colors duration-300 hover:text-vasper-teal dark:hover:text-[#9AEBA3]"
                 >
                   hello@vasperlabs.com
                 </Link>
@@ -69,7 +69,7 @@ export function Footer() {
           {/* Navigation */}
           <div className="lg:col-span-8 grid gap-8 sm:grid-cols-4">
             <div>
-              <h3 className="text-sm font-normal text-[#888888] mb-4">
+              <h3 className="text-sm font-normal text-slate-900 dark:text-[#888888] mb-4">
                 {t("catResearch")}
               </h3>
               <ul className="space-y-3">
@@ -77,7 +77,7 @@ export function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm font-light text-[#555555] transition-colors duration-300 hover:text-[#888888]"
+                      className="text-sm font-light text-slate-500 dark:text-[#555555] transition-colors duration-300 hover:text-slate-800 dark:hover:text-[#888888]"
                     >
                       {item.name}
                     </Link>
@@ -87,7 +87,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="text-sm font-normal text-[#888888] mb-4">
+              <h3 className="text-sm font-normal text-slate-900 dark:text-[#888888] mb-4">
                 {t("catCompany")}
               </h3>
               <ul className="space-y-3">
@@ -95,7 +95,7 @@ export function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm font-light text-[#555555] transition-colors duration-300 hover:text-[#888888]"
+                      className="text-sm font-light text-slate-500 dark:text-[#555555] transition-colors duration-300 hover:text-slate-800 dark:hover:text-[#888888]"
                     >
                       {item.name}
                     </Link>
@@ -105,13 +105,13 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="text-sm font-normal text-[#888888] mb-4">{t("catLegal")}</h3>
+              <h3 className="text-sm font-normal text-slate-900 dark:text-[#888888] mb-4">{t("catLegal")}</h3>
               <ul className="space-y-3">
                 {navigation.legal.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm font-light text-[#555555] transition-colors duration-300 hover:text-[#888888]"
+                      className="text-sm font-light text-slate-500 dark:text-[#555555] transition-colors duration-300 hover:text-slate-800 dark:hover:text-[#888888]"
                     >
                       {item.name}
                     </Link>
@@ -121,7 +121,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="text-sm font-normal text-[#888888] mb-4">
+              <h3 className="text-sm font-normal text-slate-900 dark:text-[#888888] mb-4">
                 {t("catSocial")}
               </h3>
               <ul className="space-y-3">
@@ -129,7 +129,7 @@ export function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm font-light text-[#555555] transition-colors duration-300 hover:text-[#888888]"
+                      className="text-sm font-light text-slate-500 dark:text-[#555555] transition-colors duration-300 hover:text-slate-800 dark:hover:text-[#888888]"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -143,11 +143,11 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-[#1A1A1A] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs font-light text-[#444444]">
+        <div className="mt-16 pt-8 border-t border-slate-200 dark:border-[#1A1A1A] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs font-light text-slate-500 dark:text-[#444444]">
             {t("copyright", { year: new Date().getFullYear() })}
           </p>
-          <p className="text-xs font-light text-[#444444]">
+          <p className="text-xs font-light text-slate-500 dark:text-[#444444]">
             {t("registered")}
           </p>
         </div>

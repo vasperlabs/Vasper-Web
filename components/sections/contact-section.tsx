@@ -88,31 +88,31 @@ export function ContactSection() {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative py-32 lg:py-48 px-6 lg:px-8 bg-[#0A0A0A]"
+      className="relative py-32 lg:py-48 px-6 lg:px-8 bg-white dark:bg-[#0A0A0A]"
     >
       <div className="mx-auto max-w-3xl">
         <div ref={contentRef} className="opacity-0">
           <div className="text-center mb-16">
-            <span className="text-sm font-light text-[#555555] tracking-wider uppercase mb-4 block">
+            <span className="text-sm font-light text-slate-500 dark:text-[#555555] tracking-wider uppercase mb-4 block">
               {t("label")}
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.15] tracking-tight text-[#EDEDED] text-balance">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.15] tracking-tight text-slate-900 dark:text-[#EDEDED] text-balance">
               {t("heading")}
             </h2>
-            <p className="mt-6 text-lg font-light leading-relaxed text-[#888888] max-w-xl mx-auto">
+            <p className="mt-6 text-lg font-light leading-relaxed text-slate-600 dark:text-[#888888] max-w-xl mx-auto">
               {t("description")}
             </p>
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm font-light text-[#666666]">
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm font-light text-slate-600 dark:text-[#666666]">
               <Link
                 href="tel:+19176955756"
-                className="transition-colors duration-300 hover:text-[#9AEBA3]"
+                className="transition-colors duration-300 hover:text-vasper-teal dark:hover:text-[#9AEBA3]"
               >
                 +1 (917) 695-5756
               </Link>
-              <span className="hidden sm:inline text-[#333333]">•</span>
+              <span className="hidden sm:inline text-slate-300 dark:text-[#333333]">•</span>
               <Link
                 href="mailto:hello@vasperlabs.com"
-                className="transition-colors duration-300 hover:text-[#9AEBA3]"
+                className="transition-colors duration-300 hover:text-vasper-teal dark:hover:text-[#9AEBA3]"
               >
                 hello@vasperlabs.com
               </Link>
@@ -120,10 +120,10 @@ export function ContactSection() {
           </div>
 
           {isSuccess ? (
-            <div className="text-center py-16 px-8 bg-[#111111] rounded-2xl border border-[#1A1A1A]">
-              <div className="w-12 h-12 mx-auto mb-6 rounded-full bg-[#9AEBA3]/10 flex items-center justify-center">
+            <div className="text-center py-16 px-8 bg-slate-50 dark:bg-[#111111] rounded-2xl border border-slate-200 dark:border-[#1A1A1A] shadow-sm dark:shadow-none">
+              <div className="w-12 h-12 mx-auto mb-6 rounded-full bg-vasper-teal/10 dark:bg-[#9AEBA3]/10 flex items-center justify-center">
                 <svg
-                  className="w-6 h-6 text-[#9AEBA3]"
+                  className="w-6 h-6 text-vasper-teal dark:text-[#9AEBA3]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -136,10 +136,10 @@ export function ContactSection() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-normal text-[#EDEDED] mb-2">
+              <h3 className="text-xl font-normal text-slate-900 dark:text-[#EDEDED] mb-2">
                 {t("successTitle")}
               </h3>
-              <p className="text-base font-light text-[#888888]">
+              <p className="text-base font-light text-slate-600 dark:text-[#888888]">
                 {t("successDesc")}
               </p>
             </div>
@@ -149,7 +149,7 @@ export function ContactSection() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-light text-[#888888] mb-3"
+                    className="block text-sm font-light text-slate-600 dark:text-[#888888] mb-3"
                   >
                     {t("nameLabel")}
                   </label>
@@ -158,7 +158,7 @@ export function ContactSection() {
                     type="text"
                     id="name"
                     className={cn(
-                      "w-full bg-transparent border-0 border-b border-[#333333] py-3 text-[#EDEDED] placeholder-[#555555] focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light",
+                      "w-full bg-transparent border-0 border-b border-slate-300 dark:border-[#333333] py-3 text-slate-900 dark:text-[#EDEDED] placeholder:text-slate-400 dark:placeholder-[#555555] focus:border-slate-500 dark:focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light",
                       errors.name && "border-red-500/50"
                     )}
                     placeholder={t("namePlaceholder")}
@@ -173,7 +173,7 @@ export function ContactSection() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-light text-[#888888] mb-3"
+                    className="block text-sm font-light text-slate-600 dark:text-[#888888] mb-3"
                   >
                     {t("emailLabel")}
                   </label>
@@ -182,7 +182,7 @@ export function ContactSection() {
                     type="email"
                     id="email"
                     className={cn(
-                      "w-full bg-transparent border-0 border-b border-[#333333] py-3 text-[#EDEDED] placeholder-[#555555] focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light",
+                      "w-full bg-transparent border-0 border-b border-slate-300 dark:border-[#333333] py-3 text-slate-900 dark:text-[#EDEDED] placeholder:text-slate-400 dark:placeholder-[#555555] focus:border-slate-500 dark:focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light",
                       errors.email && "border-red-500/50"
                     )}
                     placeholder={t("emailPlaceholder")}
@@ -198,16 +198,16 @@ export function ContactSection() {
               <div>
                 <label
                   htmlFor="company"
-                  className="block text-sm font-light text-[#888888] mb-3"
+                  className="block text-sm font-light text-slate-600 dark:text-[#888888] mb-3"
                 >
                   {t("companyLabel")}{" "}
-                  <span className="text-[#555555]">{t("companyOptional")}</span>
+                  <span className="text-slate-400 dark:text-[#555555]">{t("companyOptional")}</span>
                 </label>
                 <input
                   {...register("company")}
                   type="text"
                   id="company"
-                  className="w-full bg-transparent border-0 border-b border-[#333333] py-3 text-[#EDEDED] placeholder-[#555555] focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light"
+                  className="w-full bg-transparent border-0 border-b border-slate-300 dark:border-[#333333] py-3 text-slate-900 dark:text-[#EDEDED] placeholder:text-slate-400 dark:placeholder-[#555555] focus:border-slate-500 dark:focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light"
                   placeholder={t("companyPlaceholder")}
                 />
               </div>
@@ -215,7 +215,7 @@ export function ContactSection() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-light text-[#888888] mb-3"
+                  className="block text-sm font-light text-slate-600 dark:text-[#888888] mb-3"
                 >
                   {t("messageLabel")}
                 </label>
@@ -224,7 +224,7 @@ export function ContactSection() {
                   id="message"
                   rows={4}
                   className={cn(
-                    "w-full bg-transparent border-0 border-b border-[#333333] py-3 text-[#EDEDED] placeholder-[#555555] focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light resize-none",
+                    "w-full bg-transparent border-0 border-b border-slate-300 dark:border-[#333333] py-3 text-slate-900 dark:text-[#EDEDED] placeholder:text-slate-400 dark:placeholder-[#555555] focus:border-slate-500 dark:focus:border-[#555555] focus:ring-0 transition-colors duration-300 font-light resize-none",
                     errors.message && "border-red-500/50"
                   )}
                   placeholder={t("messagePlaceholder")}
@@ -240,7 +240,7 @@ export function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 text-base font-light text-[#0A0A0A] bg-[#EDEDED] rounded-full transition-all duration-300 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 text-base font-light text-white dark:text-[#0A0A0A] bg-slate-900 dark:bg-[#EDEDED] rounded-full transition-all duration-300 hover:bg-slate-800 dark:hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>

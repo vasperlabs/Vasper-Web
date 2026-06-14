@@ -45,19 +45,19 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center px-6 lg:px-8"
+      className="relative min-h-screen flex items-center justify-center px-6 lg:px-8 bg-transparent"
     >
       <div className="mx-auto max-w-4xl text-center">
         <h1
           ref={headingRef}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight text-[#EDEDED] text-balance opacity-0"
+          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight text-slate-900 dark:text-[#EDEDED] text-balance opacity-0"
         >
           {t("title")}
         </h1>
 
         <p
           ref={subtextRef}
-          className="mt-8 text-lg sm:text-xl font-light leading-relaxed text-[#888888] max-w-2xl mx-auto text-pretty opacity-0"
+          className="mt-8 text-lg sm:text-xl font-light leading-relaxed text-slate-600 dark:text-[#888888] max-w-2xl mx-auto text-pretty opacity-0"
         >
           {t("subtext")}
         </p>
@@ -65,7 +65,7 @@ export function HeroSection() {
         <div ref={ctaRef} className="mt-12 opacity-0">
           <Link
             href="#research"
-            className="group inline-flex items-center gap-3 px-8 py-4 text-base font-light text-[#0A0A0A] bg-[#EDEDED] rounded-full transition-all duration-300 hover:bg-white hover:gap-4"
+            className="group inline-flex items-center gap-3 px-8 py-4 text-base font-light text-white dark:text-[#0A0A0A] bg-slate-900 dark:bg-[#EDEDED] rounded-full transition-all duration-300 hover:bg-slate-800 dark:hover:bg-white hover:gap-4"
           >
             {t("cta")}
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Globe, ChevronDown } from "lucide-react";
+import { ThemeSwitcher } from "./theme-switcher";
 
 const locales = [
   { code: "en", name: "English" },
@@ -64,7 +65,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-[#0A0A0A]/80 backdrop-blur-md border-b border-[#222222]/50"
+          ? "bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-md border-b border-slate-200 dark:border-[#222222]/50"
           : "bg-transparent"
       )}
     >
@@ -77,7 +78,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-light text-[#888888] transition-colors duration-300 hover:text-[#EDEDED]"
+                className="text-sm font-light text-slate-600 dark:text-[#888888] transition-colors duration-300 hover:text-slate-900 dark:hover:text-[#EDEDED]"
               >
                 {item.name}
               </Link>
@@ -86,11 +87,13 @@ export function Header() {
 
           <div className="hidden md:flex md:items-center md:gap-x-4">
             
+            <ThemeSwitcher />
+
             <div className="relative">
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
                 onBlur={() => setTimeout(() => setLangMenuOpen(false), 200)}
-                className="inline-flex items-center gap-1.5 px-2 py-2 text-sm font-light text-[#888888] transition-colors duration-300 hover:text-[#EDEDED] cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-2 py-2 text-sm font-light text-slate-500 dark:text-[#888888] transition-colors duration-300 hover:text-slate-900 dark:hover:text-[#EDEDED] cursor-pointer"
               >
                 <Globe className="w-4 h-4" />
                 <span className="uppercase">{locale}</span>
@@ -101,7 +104,7 @@ export function Header() {
 
               <div
                 className={cn(
-                  "absolute right-0 top-full mt-2 w-32 rounded-xl border border-[#222222] bg-[#0A0A0A] shadow-lg backdrop-blur-md transition-all duration-300 origin-top-right",
+                  "absolute right-0 top-full mt-2 w-32 rounded-xl border border-slate-200 dark:border-[#222222] bg-white dark:bg-[#0A0A0A] shadow-lg backdrop-blur-md transition-all duration-300 origin-top-right",
                   langMenuOpen 
                     ? "opacity-100 scale-100 visible translate-y-0" 
                     : "opacity-0 scale-95 invisible -translate-y-2"
@@ -113,8 +116,10 @@ export function Header() {
                       key={l.code}
                       onClick={() => switchLocale(l.code)}
                       className={cn(
-                        "w-full text-left px-4 py-2 text-sm font-light transition-colors hover:bg-[#111111] cursor-pointer",
-                        locale === l.code ? "text-[#EDEDED] bg-[#111111]/50" : "text-[#888888]"
+                        "w-full text-left px-4 py-2 text-sm font-light transition-colors cursor-pointer",
+                        locale === l.code 
+                          ? "text-slate-900 bg-slate-100 dark:text-[#EDEDED] dark:bg-[#111111]/50" 
+                          : "text-slate-600 hover:bg-slate-50 dark:text-[#888888] dark:hover:bg-[#111111]"
                       )}
                     >
                       {l.name}
@@ -126,7 +131,7 @@ export function Header() {
 
             <Link
               href="#contact"
-              className="inline-flex items-center px-5 py-2 text-sm font-light text-[#EDEDED] border border-[#333333] rounded-full transition-all duration-300 hover:border-[#555555] hover:bg-[#111111]"
+              className="inline-flex items-center px-5 py-2 text-sm font-light text-slate-900 dark:text-[#EDEDED] border border-slate-300 dark:border-[#333333] rounded-full transition-all duration-300 hover:bg-slate-100 dark:hover:border-[#555555] dark:hover:bg-[#111111]"
             >
               {t("contact")}
             </Link>
@@ -141,19 +146,19 @@ export function Header() {
             <div className="w-5 h-4 flex flex-col justify-between">
               <span
                 className={cn(
-                  "w-full h-px bg-[#EDEDED] transition-all duration-300",
+                  "w-full h-px bg-slate-900 dark:bg-[#EDEDED] transition-all duration-300",
                   mobileMenuOpen && "rotate-45 translate-y-1.5"
                 )}
               />
               <span
                 className={cn(
-                  "w-full h-px bg-[#EDEDED] transition-all duration-300",
+                  "w-full h-px bg-slate-900 dark:bg-[#EDEDED] transition-all duration-300",
                   mobileMenuOpen && "opacity-0"
                 )}
               />
               <span
                 className={cn(
-                  "w-full h-px bg-[#EDEDED] transition-all duration-300",
+                  "w-full h-px bg-slate-900 dark:bg-[#EDEDED] transition-all duration-300",
                   mobileMenuOpen && "-rotate-45 -translate-y-1.5"
                 )}
               />
@@ -167,26 +172,26 @@ export function Header() {
             mobileMenuOpen ? "max-h-80 pb-6" : "max-h-0"
           )}
         >
-          <div className="flex flex-col gap-4 pt-4">
+          <div className="flex flex-col gap-4 pt-4 bg-white dark:bg-transparent px-4 pb-4 md:px-0 rounded-b-2xl md:rounded-none">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-base font-light text-[#888888] transition-colors duration-300 hover:text-[#EDEDED]"
+                className="text-base font-light text-slate-600 dark:text-[#888888] transition-colors duration-300 hover:text-slate-900 dark:hover:text-[#EDEDED]"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
             
-            <div className="flex gap-4 pt-2 border-t border-[#222222]/50">
+            <div className="flex gap-4 pt-2 border-t border-slate-200 dark:border-[#222222]/50">
               {locales.map((l) => (
                 <button
                   key={l.code}
                   onClick={() => switchLocale(l.code)}
                   className={cn(
-                    "text-sm font-light uppercase transition-colors",
-                    locale === l.code ? "text-[#EDEDED]" : "text-[#888888]"
+                    "text-sm font-light uppercase transition-colors cursor-pointer",
+                    locale === l.code ? "text-slate-900 dark:text-[#EDEDED]" : "text-slate-500 dark:text-[#888888]"
                   )}
                 >
                   {l.code}
@@ -196,7 +201,7 @@ export function Header() {
 
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center px-5 py-2 mt-2 text-sm font-light text-[#EDEDED] border border-[#333333] rounded-full transition-all duration-300 hover:border-[#555555]"
+              className="inline-flex items-center justify-center px-5 py-2 mt-2 text-sm font-light text-slate-900 dark:text-[#EDEDED] border border-slate-300 dark:border-[#333333] rounded-full transition-all duration-300 hover:bg-slate-50 dark:hover:border-[#555555]"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("contact")}

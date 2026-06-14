@@ -70,14 +70,14 @@ export function PhilosophySection() {
     <section
       ref={sectionRef}
       id="research"
-      className="relative py-32 lg:py-48 px-6 lg:px-8"
+      className="relative py-32 lg:py-48 px-6 lg:px-8 bg-transparent"
     >
       <div className="mx-auto max-w-7xl">
         <div ref={headingRef} className="max-w-3xl opacity-0">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.15] tracking-tight text-[#EDEDED] text-balance">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.15] tracking-tight text-slate-900 dark:text-[#EDEDED] text-balance">
             {t("heading")}
           </h2>
-          <p className="mt-8 text-lg sm:text-xl font-light leading-relaxed text-[#888888] max-w-2xl text-pretty">
+          <p className="mt-8 text-lg sm:text-xl font-light leading-relaxed text-slate-600 dark:text-[#888888] max-w-2xl text-pretty">
             {t("description")}
           </p>
         </div>
@@ -89,18 +89,18 @@ export function PhilosophySection() {
           {philosophyPoints.map((point, index) => (
             <div
               key={index}
-              className="philosophy-card group p-8 lg:p-10 bg-[#111111] rounded-2xl border border-[#1A1A1A] transition-all duration-500 hover:bg-[#151515] hover:border-[#252525] opacity-0"
+              className="philosophy-card group p-8 lg:p-10 bg-slate-50 dark:bg-[#111111] rounded-2xl border border-slate-200 dark:border-[#1A1A1A] transition-all duration-500 hover:bg-slate-100 dark:hover:bg-[#151515] hover:border-slate-300 dark:hover:border-[#252525] opacity-0 shadow-sm hover:shadow-md dark:shadow-none"
             >
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-sm font-light text-[#555555]">
+                <span className="text-sm font-light text-vasper-teal dark:text-[#555555]">
                   0{index + 1}
                 </span>
-                <div className="flex-1 h-px bg-[#222222]" />
+                <div className="flex-1 h-px bg-slate-200 dark:bg-[#222222]" />
               </div>
-              <h3 className="text-xl font-normal text-[#EDEDED] mb-4">
+              <h3 className="text-xl font-normal text-slate-900 dark:text-[#EDEDED] mb-4">
                 {point.title}
               </h3>
-              <p className="text-base font-light leading-relaxed text-[#888888]">
+              <p className="text-base font-light leading-relaxed text-slate-600 dark:text-[#888888]">
                 {point.description}
               </p>
             </div>
