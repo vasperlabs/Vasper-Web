@@ -17,11 +17,14 @@ const locales = [
 
 function VasperLogo({ className }: { className?: string }) {
   return (
-    <Link href="/" className={cn("flex items-baseline gap-0", className)}>
-      <span className="text-xl font-medium tracking-tight vasper-gradient">
+    <Link 
+      href="/" 
+      className={cn("flex items-baseline gap-0 relative z-50 opacity-100 mix-blend-normal transform-gpu", className)}
+    >
+      <span className="text-xl font-medium tracking-tight vasper-gradient drop-shadow-sm">
         VΛsper
       </span>
-      <span className="text-xl font-light tracking-tight text-[#A1A1AA]">
+      <span className="text-xl font-light tracking-tight text-slate-900 dark:text-white">
         labs
       </span>
     </Link>
@@ -55,17 +58,35 @@ export function Header() {
   }, []);
 
   const switchLocale = (newLocale: string) => {
-    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
+    if (newLocale === locale) {
+      setLangMenuOpen(false);
+      setMobileMenuOpen(false);
+      return;
+    }
+
+    let newPath = pathname;
+    if (pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`) {
+      newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
+    } else {
+      newPath = `/${newLocale}${pathname === '/' ? '' : pathname}`;
+    }
+
+    // Explicitly set cookie for next-intl just in case
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`;
+    
     router.push(newPath);
+    router.refresh();
+    
     setLangMenuOpen(false);
+    setMobileMenuOpen(false);
   };
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled
-          ? "bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-md border-b border-slate-200 dark:border-[#222222]/50"
+        "fixed top-0 left-0 right-0 z-[100] transition-all duration-500",
+        scrolled || mobileMenuOpen
+          ? "bg-white dark:bg-[#0A0A0A] border-b border-slate-200 dark:border-[#222222]/50 shadow-md"
           : "bg-transparent"
       )}
     >
@@ -139,7 +160,7 @@ export function Header() {
 
           <button
             type="button"
-            className="md:hidden p-2"
+            className="md:hidden p-2 relative z-50"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -168,40 +189,42 @@ export function Header() {
 
         <div
           className={cn(
-            "md:hidden overflow-hidden transition-all duration-300",
-            mobileMenuOpen ? "max-h-80 pb-6" : "max-h-0"
+            "md:hidden overflow-hidden transition-all duration-300 bg-white dark:bg-[#0A0A0A]",
+            mobileMenuOpen ? "max-h-[400px] pb-6 border-b border-slate-200 dark:border-[#222222]/50 shadow-2xl" : "max-h-0"
           )}
         >
-          <div className="flex flex-col gap-4 pt-4 bg-white dark:bg-transparent px-4 pb-4 md:px-0 rounded-b-2xl md:rounded-none">
+          <div className="flex flex-col gap-4 pt-4 px-4 pb-4 md:px-0">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-base font-light text-slate-600 dark:text-[#888888] transition-colors duration-300 hover:text-slate-900 dark:hover:text-[#EDEDED]"
+                className="text-base font-medium text-slate-800 dark:text-[#EDEDED] transition-colors duration-300 hover:text-vasper-teal"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
             
-            <div className="flex gap-4 pt-2 border-t border-slate-200 dark:border-[#222222]/50">
+            <div className="flex flex-wrap gap-3 pt-4 pb-2 border-t border-slate-200 dark:border-[#222222]/50">
               {locales.map((l) => (
                 <button
                   key={l.code}
                   onClick={() => switchLocale(l.code)}
                   className={cn(
-                    "text-sm font-light uppercase transition-colors cursor-pointer",
-                    locale === l.code ? "text-slate-900 dark:text-[#EDEDED]" : "text-slate-500 dark:text-[#888888]"
+                    "px-3 py-1.5 text-sm font-medium rounded-full transition-colors cursor-pointer",
+                    locale === l.code 
+                      ? "bg-vasper-teal text-white" 
+                      : "bg-slate-100 text-slate-700 dark:bg-[#1A1A1A] dark:text-[#888888] hover:bg-slate-200 dark:hover:bg-[#222222]"
                   )}
                 >
-                  {l.code}
+                  {l.name}
                 </button>
               ))}
             </div>
 
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center px-5 py-2 mt-2 text-sm font-light text-slate-900 dark:text-[#EDEDED] border border-slate-300 dark:border-[#333333] rounded-full transition-all duration-300 hover:bg-slate-50 dark:hover:border-[#555555]"
+              className="mt-2 w-full inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-white dark:text-[#0A0A0A] bg-slate-900 dark:bg-[#EDEDED] rounded-full transition-all duration-300 hover:bg-slate-800 dark:hover:bg-white"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("contact")}
@@ -212,3 +235,4 @@ export function Header() {
     </header>
   );
 }
+
