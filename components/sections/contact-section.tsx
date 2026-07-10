@@ -48,8 +48,8 @@ export function ContactSection() {
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
-          ease: "power3.out",
+          duration: 0.8,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: contentRef.current,
             start: "top 85%",
@@ -91,7 +91,7 @@ export function ContactSection() {
       className="relative py-32 lg:py-48 px-6 lg:px-8 bg-white dark:bg-[#0A0A0A]"
     >
       <div className="mx-auto max-w-3xl">
-        <div ref={contentRef} className="opacity-0">
+        <div ref={contentRef} className="opacity-0 will-change-[transform,opacity]">
           <div className="text-center mb-16">
             <span className="text-sm font-light text-slate-500 dark:text-[#555555] tracking-wider uppercase mb-4 block">
               {t("label")}

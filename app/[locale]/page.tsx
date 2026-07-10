@@ -1,11 +1,12 @@
 import { FluidBackground } from "@/components/fluid-background";
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/sections/hero-section";
-import { PhilosophySection } from "@/components/sections/philosophy-section";
-import { VenturesSection } from "@/components/sections/ventures-section";
-import { TeamSection } from "@/components/sections/team-section";
-import { ContactSection } from "@/components/sections/contact-section";
-import { Footer } from "@/components/footer";
+import dynamic from "next/dynamic";
+
+const PhilosophySection = dynamic(() => import("@/components/sections/philosophy-section").then((mod) => mod.PhilosophySection));
+const VenturesSection = dynamic(() => import("@/components/sections/ventures-section").then((mod) => mod.VenturesSection));
+const ContactSection = dynamic(() => import("@/components/sections/contact-section").then((mod) => mod.ContactSection));
+const Footer = dynamic(() => import("@/components/footer").then((mod) => mod.Footer));
 
 export default function Home() {
   return (

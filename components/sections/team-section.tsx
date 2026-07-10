@@ -42,8 +42,8 @@ export function TeamSection() {
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
-          ease: "power3.out",
+          duration: 0.8,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: headingRef.current,
             start: "top 85%",
@@ -60,9 +60,9 @@ export function TeamSection() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.9,
+            duration: 0.5,
             stagger: 0.1,
-            ease: "power3.out",
+            ease: "power2.out",
             scrollTrigger: {
               trigger: gridRef.current,
               start: "top 80%",
@@ -83,7 +83,7 @@ export function TeamSection() {
       className="relative py-32 lg:py-48 px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div ref={headingRef} className="max-w-3xl mb-20 lg:mb-28 opacity-0">
+        <div ref={headingRef} className="max-w-3xl mb-20 lg:mb-28 opacity-0 will-change-[transform,opacity]">
           <span className="text-sm font-light text-[#555555] tracking-wider uppercase mb-4 block">
             Leadership
           </span>
@@ -101,7 +101,7 @@ export function TeamSection() {
           className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
         >
           {team.map((member, index) => (
-            <div key={index} className="team-member group opacity-0">
+            <div key={index} className="team-member group opacity-0 will-change-[transform,opacity]">
               {/* Portrait placeholder */}
               <div className="aspect-[3/4] mb-6 bg-[#111111] rounded-xl overflow-hidden border border-[#1A1A1A]">
                 <div className="w-full h-full flex items-center justify-center">

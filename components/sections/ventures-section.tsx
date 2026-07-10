@@ -50,8 +50,8 @@ export function VenturesSection() {
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
-          ease: "power3.out",
+          duration: 0.8,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: headingRef.current,
             start: "top 85%",
@@ -68,9 +68,9 @@ export function VenturesSection() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.9,
-            stagger: 0.12,
-            ease: "power3.out",
+            duration: 0.5,
+            stagger: 0.08,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: gridRef.current,
               start: "top 80%",
@@ -91,7 +91,7 @@ export function VenturesSection() {
       className="relative py-32 lg:py-48 px-6 lg:px-8 bg-slate-50 dark:bg-[#0A0A0A]"
     >
       <div className="mx-auto max-w-7xl">
-        <div ref={headingRef} className="max-w-3xl mb-20 lg:mb-28 opacity-0">
+        <div ref={headingRef} className="max-w-3xl mb-20 lg:mb-28 opacity-0 will-change-[transform,opacity]">
           <span className="text-sm font-light text-slate-500 dark:text-[#555555] tracking-wider uppercase mb-4 block">
             {t("label")}
           </span>
@@ -110,7 +110,7 @@ export function VenturesSection() {
           {ventures.map((venture, index) => (
             <div
               key={index}
-              className="venture-card group relative p-8 lg:p-10 bg-white dark:bg-[#111111] rounded-2xl border border-slate-200 dark:border-[#1A1A1A] transition-all duration-500 hover:bg-slate-50 dark:hover:bg-[#151515] hover:border-slate-300 dark:hover:border-[#252525] cursor-pointer opacity-0 shadow-sm hover:shadow-md dark:shadow-none"
+              className="venture-card group relative p-8 lg:p-10 bg-white dark:bg-[#111111] rounded-2xl border border-slate-200 dark:border-[#1A1A1A] transition-all duration-300 ease-out hover:bg-slate-50 dark:hover:bg-[#151515] hover:border-slate-300 dark:hover:border-[#252525] cursor-pointer opacity-0 shadow-sm hover:shadow-md dark:shadow-none will-change-[transform,opacity]"
             >
               <div className="flex items-start justify-between mb-6">
                 <div>

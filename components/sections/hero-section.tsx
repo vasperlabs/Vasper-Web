@@ -17,7 +17,7 @@ export function HeroSection() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
-        defaults: { ease: "power3.out", duration: 1.2 },
+        defaults: { ease: "power2.out", duration: 0.8 },
       });
 
       tl.fromTo(
@@ -29,13 +29,13 @@ export function HeroSection() {
           subtextRef.current,
           { opacity: 0, y: 40 },
           { opacity: 1, y: 0 },
-          "-=0.8"
+          "-=0.5"
         )
         .fromTo(
           ctaRef.current,
           { opacity: 0, y: 30 },
           { opacity: 1, y: 0 },
-          "-=0.6"
+          "-=0.4"
         );
     }, sectionRef);
 
@@ -50,19 +50,19 @@ export function HeroSection() {
       <div className="mx-auto max-w-4xl text-center">
         <h1
           ref={headingRef}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight text-slate-900 dark:text-[#EDEDED] text-balance opacity-0"
+          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight text-slate-900 dark:text-[#EDEDED] text-balance opacity-0 will-change-[transform,opacity]"
         >
           {t("title")}
         </h1>
 
         <p
           ref={subtextRef}
-          className="mt-8 text-lg sm:text-xl font-light leading-relaxed text-slate-600 dark:text-[#888888] max-w-2xl mx-auto text-pretty opacity-0"
+          className="mt-8 text-lg sm:text-xl font-light leading-relaxed text-slate-600 dark:text-[#888888] max-w-2xl mx-auto text-pretty opacity-0 will-change-[transform,opacity]"
         >
           {t("subtext")}
         </p>
 
-        <div ref={ctaRef} className="mt-12 opacity-0">
+        <div ref={ctaRef} className="mt-12 opacity-0 will-change-[transform,opacity]">
           <Link
             href="#research"
             className="group inline-flex items-center gap-3 px-8 py-4 text-base font-light text-white dark:text-[#0A0A0A] bg-slate-900 dark:bg-[#EDEDED] rounded-full transition-all duration-300 hover:bg-slate-800 dark:hover:bg-white hover:gap-4"

@@ -29,8 +29,8 @@ export function PhilosophySection() {
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
-          ease: "power3.out",
+          duration: 0.8,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: headingRef.current,
             start: "top 85%",
@@ -49,9 +49,9 @@ export function PhilosophySection() {
           {
             opacity: 1,
             y: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: "power3.out",
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: contentRef.current,
               start: "top 80%",
@@ -73,7 +73,7 @@ export function PhilosophySection() {
       className="relative py-32 lg:py-48 px-6 lg:px-8 bg-transparent"
     >
       <div className="mx-auto max-w-7xl">
-        <div ref={headingRef} className="max-w-3xl opacity-0">
+        <div ref={headingRef} className="max-w-3xl opacity-0 will-change-[transform,opacity]">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.15] tracking-tight text-slate-900 dark:text-[#EDEDED] text-balance">
             {t("heading")}
           </h2>
@@ -89,7 +89,7 @@ export function PhilosophySection() {
           {philosophyPoints.map((point, index) => (
             <div
               key={index}
-              className="philosophy-card group p-8 lg:p-10 bg-slate-50 dark:bg-[#111111] rounded-2xl border border-slate-200 dark:border-[#1A1A1A] transition-all duration-500 hover:bg-slate-100 dark:hover:bg-[#151515] hover:border-slate-300 dark:hover:border-[#252525] opacity-0 shadow-sm hover:shadow-md dark:shadow-none"
+              className="philosophy-card group p-8 lg:p-10 bg-slate-50 dark:bg-[#111111] rounded-2xl border border-slate-200 dark:border-[#1A1A1A] transition-all duration-300 ease-out hover:bg-slate-100 dark:hover:bg-[#151515] hover:border-slate-300 dark:hover:border-[#252525] opacity-0 shadow-sm hover:shadow-md dark:shadow-none will-change-[transform,opacity]"
             >
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-sm font-light text-vasper-teal dark:text-[#555555]">
