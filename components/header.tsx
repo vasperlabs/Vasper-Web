@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
@@ -35,6 +35,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   // next-intl hooks
   const t = useTranslations("Header");
@@ -74,8 +75,11 @@ export function Header() {
     // Explicitly set cookie for next-intl just in case
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`;
     
-    router.push(newPath);
-    router.refresh();
+    // Wrap navigation in a transition to prevent UI blocking (React 18 concurrent rendering)
+    startTransition(() => {
+      router.replace(newPath);
+      router.refresh();
+    });
     
     setLangMenuOpen(false);
     setMobileMenuOpen(false);
